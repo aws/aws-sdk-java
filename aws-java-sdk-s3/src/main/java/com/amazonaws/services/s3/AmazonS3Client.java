@@ -1403,10 +1403,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public boolean doesBucketExistV2(String bucketName) throws SdkClientException {
         try {
             ValidationUtils.assertStringNotEmpty(bucketName, "bucketName");
-            getBucketAcl(bucketName);
-            return true;
+            List<Bucket> buckets = listBuckets();
+
+            for(int i=0; i<buckets.size(); i++){
+                if (buckets.get(i).getName()==bucketName){
+                    return true;
+                }
+            }
+            return false;
         } catch (AmazonServiceException ase) {
-            // A redirect error or an AccessDenied exception means the bucket exists but it's not in this region
+            // A redirect error or an AccessDenied exception means the bucket exists but it's not in this region,
             // or we don't have permissions to it.
             if ((ase.getStatusCode() == Constants.BUCKET_REDIRECT_STATUS_CODE) || "AccessDenied".equals(ase.getErrorCode())) {
                 return true;
